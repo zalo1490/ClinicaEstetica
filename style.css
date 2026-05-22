@@ -1,0 +1,552 @@
+/* ==========================================================================
+   Variables Globales y Configuración Base (Estilo Premium/Clínica)
+   ========================================================================== */
+:root {
+    --bg-color: #f8fafc;
+    --text-main: #0f172a;
+    --text-muted: #475569;
+    --accent-emerald: #059669;
+    --accent-emerald-light: #10b981;
+    --accent-whatsapp: #25D366;
+    --white: #ffffff;
+    --border-light: rgba(15, 23, 42, 0.06);
+    --radius-section: 24px;
+    --radius-card: 16px;
+    --radius-button: 12px;
+    --transition-premium: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.text-center { text-align: center; }
+
+/* ==========================================================================
+   Efecto Glassmorphism Refinado
+   ========================================================================== */
+.glass {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.015);
+}
+
+/* ==========================================================================
+   Header & Navegación
+   ========================================================================== */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+}
+
+.logo-text {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    color: var(--text-main);
+}
+
+.logo-text span {
+    color: var(--accent-emerald);
+    font-weight: 400;
+}
+
+.nav-links {
+    display: flex;
+    gap: 4px;
+    margin-left: 40px;
+}
+
+.nav-link-item {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: var(--radius-button);
+    transition: var(--transition-premium);
+}
+
+.nav-link-item:hover {
+    color: var(--text-main);
+    background: rgba(15, 23, 42, 0.04);
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+/* ==========================================================================
+   Botones Premium
+   ========================================================================== */
+.btn-primary, .btn-secondary, .btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    border-radius: var(--radius-button);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-premium);
+}
+
+.btn-primary {
+    background: var(--text-main);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: var(--accent-emerald);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(5, 150, 105, 0.2);
+}
+
+.btn-secondary {
+    background: var(--white);
+    color: var(--text-main);
+    border: 1px solid var(--border-light);
+}
+
+.btn-secondary:hover {
+    background: rgba(15, 23, 42, 0.02);
+    transform: translateY(-2px);
+}
+
+.btn-whatsapp {
+    background: var(--accent-whatsapp);
+    color: var(--white);
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.15);
+}
+
+.btn-whatsapp:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(37, 211, 102, 0.25);
+}
+
+.btn-primary.small, .btn-secondary.small {
+    padding: 10px 20px;
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+.full-width { width: 100%; box-sizing: border-box; }
+
+/* ==========================================================================
+   Hero Section (Maquetación con Imagen Central)
+   ========================================================================== */
+.hero-section {
+    padding: 80px 0;
+    background: radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.04) 0%, transparent 50%);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(5, 150, 105, 0.06);
+    color: var(--accent-emerald);
+    padding: 6px 14px;
+    border-radius: 99px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.hero-content h1 {
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    margin: 0 0 20px;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, var(--accent-emerald) 0%, var(--accent-emerald-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+    max-width: 500px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+}
+
+/* Contenedor de la Imagen Principal */
+.hero-image-container {
+    position: relative;
+    border-radius: var(--radius-section);
+    overflow: visible;
+}
+
+.hero-main-image {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    border-radius: var(--radius-section);
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.06);
+}
+
+.floating-card {
+    position: absolute;
+    bottom: 32px;
+    left: -24px;
+    padding: 20px;
+    border-radius: var(--radius-card);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+}
+
+.floating-card .card-number {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--accent-emerald);
+    line-height: 1;
+}
+
+.floating-card .card-text {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+/* ==========================================================================
+   Secciones y Encabezados
+   ========================================================================== */
+.anchor-offset {
+    scroll-margin-top: 110px;
+    padding: 80px 0 40px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0 0 12px;
+}
+
+.section-subtitle {
+    color: var(--text-muted);
+    font-size: 16px;
+    max-width: 540px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   Filtros Dinámicos
+   ========================================================================== */
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 40px;
+}
+
+.filter-btn {
+    padding: 10px 22px;
+    border-radius: 99px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-muted);
+    background: transparent;
+    border: 1px solid var(--border-light);
+    cursor: pointer;
+    transition: var(--transition-premium);
+}
+
+.filter-btn:hover {
+    color: var(--text-main);
+    border-color: var(--text-main);
+}
+
+.filter-btn.active {
+    background: var(--text-main);
+    color: var(--white);
+    border-color: var(--text-main);
+}
+
+/* ==========================================================================
+   Grid y Tarjetas Bento con Imágenes Reales
+   ========================================================================== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+.card {
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    transition: var(--transition-premium);
+}
+
+.treatment-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.treatment-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.04);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+/* Contenedor de Imagen de Tarjeta */
+.card-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background: #e2e8f0;
+}
+
+.treatment-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.treatment-card:hover .treatment-img {
+    transform: scale(1.06);
+}
+
+.tag-category {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: var(--white);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.02em;
+}
+
+.card-body {
+    padding: 24px;
+    flex-grow: 1;
+}
+
+.card-body h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 10px;
+}
+
+.card-body p {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Option Cards (Estimador) */
+.option-card {
+    padding: 24px;
+    background: var(--white);
+    border: 1px solid var(--border-light);
+    text-align: left;
+    cursor: pointer;
+    width: 100%;
+}
+
+.option-card h4 { margin: 0; font-size: 15px; font-weight: 600; color: var(--text-main); }
+.option-card:hover {
+    background: var(--text-main);
+    border-color: var(--text-main);
+}
+.option-card:hover h4 { color: var(--white); }
+
+.result-card {
+    margin-top: 24px;
+    padding: 32px;
+    border-left: 4px solid var(--accent-emerald);
+    animation: slideUpEffect 0.4s ease-out;
+}
+
+/* Contact Cards */
+.contact-icon { font-size: 32px; margin-bottom: 8px; }
+.contact-card h3 { font-size: 16px; margin: 0 0 4px; }
+.contact-card p { font-size: 14px; color: var(--text-muted); margin: 0 0 12px; }
+
+/* ==========================================================================
+   Formularios Integrados
+   ========================================================================== */
+.form-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    border-radius: var(--radius-section);
+    overflow: hidden;
+}
+
+.form-info {
+    background: var(--text-main);
+    color: var(--white);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-info h2 { font-size: 28px; margin: 0 0 12px; letter-spacing: -0.02em; }
+.form-info p { color: rgba(255,255,255,0.7); font-size: 14px; margin: 0; }
+
+.form-actual {
+    padding: 40px;
+    background: rgba(255,255,255,0.4);
+}
+
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+.form-actual input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 16px;
+    border-radius: var(--radius-button);
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    background: var(--white);
+    font-size: 14px;
+    transition: var(--transition-premium);
+}
+.form-actual input:focus { outline: none; border-color: var(--accent-emerald); }
+
+/* ==========================================================================
+   Footer & Animaciones
+   ========================================================================== */
+.footer-premium {
+    margin-top: 100px;
+    padding: 24px 0;
+    border-top: 1px solid var(--border-light);
+    font-size: 13px;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+@keyframes slideUpEffect {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   Media Queries (Responsive Completo)
+   ========================================================================== */
+@media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 32px; text-align: center; }
+    .hero-content p { margin: 0 auto 24px; }
+    .hero-buttons { justify-content: center; }
+    .hero-image-container { max-width: 500px; margin: 0 auto; }
+    .hero-main-image { height: 360px; }
+    .floating-card { left: 16px; bottom: -16px; }
+    .form-wrapper { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+    .nav-links { display: none; }
+    .hero-content h1 { font-size: 36px; }
+    .filters { flex-wrap: wrap; }
+}
+/* ==========================================================================
+   Ajuste del Contenedor Bento para el Video 4K
+   ========================================================================== */
+.video-bento-wrapper {
+    position: relative;
+    width: 100%;
+    height: 450px;              /* Fijamos una altura máxima elegante para escritorio */
+    border-radius: var(--radius-section, 24px);
+    overflow: hidden;           /* Obligatorio: recorta el video 4K para que no se salga */
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.06);
+    background: #0f172a;        /* Fondo oscuro de seguridad mientras carga el video */
+}
+
+/* Ajuste del elemento Video nativo */
+.hero-main-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;          /* Escala y recorta el video automáticamente sin deformarlo */
+    object-position: center;    /* Centra la acción del video en el recuadro */
+    pointer-events: none;       /* Evita que el usuario lo pause o interactúe por error */
+}
+
+/* Capa de contraste estética (Overlay) */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(248, 250, 252, 0) 50%, rgba(15, 23, 42, 0.15) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Aseguramos que la tarjeta flotante quede visible encima del video */
+.video-bento-wrapper .floating-card {
+    z-index: 2;
+}
+
+/* ==========================================================================
+   Responsive: Adaptación para Tablets y Móviles
+   ========================================================================== */
+@media (max-width: 900px) {
+    .video-bento-wrapper {
+        height: 340px;          /* Reducimos la altura en tablets y portátiles pequeños */
+    }
+}
+
+@media (max-width: 600px) {
+    .video-bento-wrapper {
+        height: 260px;          /* Altura ideal para pantallas de smartphones */
+    }
+}
